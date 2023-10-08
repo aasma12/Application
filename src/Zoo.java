@@ -3,6 +3,7 @@ public class Zoo {
     Animal[] animals;
     String name;
     String city;
+    private int nbrAnimals;
 public Zoo(){}
     public Zoo(String name, String city, int nbrCages) {
         animals = new Animal[nbrCages];
@@ -10,20 +11,52 @@ public Zoo(){}
         this.city = city;
         this.nbrCages = nbrCages;
     }
+     public void setAnimals(Animal[] animals) {
+        this.animals = animals;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        if (name.isBlank())
+            System.out.println("The Zoo name cannot be empty");
+        else
+            this.name = name;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public int getNbrAnimals() {
+        return nbrAnimals;
+    }
+
+    public void setNbrAnimals(int nbrAnimals) {
+        this.nbrAnimals = nbrAnimals;
+    }
+
 void displayZoo(){
     System.out.println(nbrCages + name + city);
 
 }
 
 boolean addAnimal(Animal animal){
-    int i;
-    for (i=1;i<=nbrCages;i++){
-        if(animals[i].name==animal.name)
-        return false;
-        else
-        animals[i]= animal;
+    if (searchAnimal(animal) != -1)
+            return false;
+        if (isZooFull())
+            return false;
+        animals[nbrAnimals] = animal;
+        nbrAnimals++;
         return true;
-    }
+    
+
 return  true;
 }
 int searchAnimal(Animal animal) {

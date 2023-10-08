@@ -13,6 +13,35 @@ public class Animal {
         this.isMammal = isMammal;
 
     }
+    public String getFamily() {
+        return family;
+    }
+
+    public void setFamily(String family) {
+        this.family = family;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        if (age < 0)
+            System.out.println(" must  be a positive number");
+        else
+            this.age = age;
+    }
+     public boolean isMammal() {
+        return isMammal;
+    }
     void displayAnimals(){
         System.out.println(family + name + age);
 
