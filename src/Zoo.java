@@ -1,5 +1,5 @@
 public class Zoo {
-    int nbrCages;
+    static final int NUMBER_OF_CAGES = 25;
     Animal[] animals;
     String name;
     String city;
@@ -49,4 +49,12 @@ boolean removeAnimal(Animal animal)
     }
     return true;
 }
+    boolean isZooFull() {
+        return nbrAnimals == NUMBER_OF_CAGES;
+    }
+    static Zoo comparerZoo(Zoo z1, Zoo z2) {
+        if (z1.nbrAnimals > z2.nbrAnimals)
+            return z1;
+        return z2;
+    }
 }
