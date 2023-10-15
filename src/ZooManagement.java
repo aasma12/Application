@@ -30,6 +30,15 @@ public class ZooManagement {
         System.out.println(myZoo.addAnimal(lion));
         System.out.println(myZoo.addAnimal(dog));
         Animal.displayAnimals();
+        Aquatic aquatic = new Aquatic("Herbivore","Tortue",4,false,"Bizerte");
+        Dolphin dolphin = new Dolphin("Mammifere","Dolphin",10,true,"Pole nord",20);
+        Penguin penguin = new Penguin("Manchots","Penguin",8,false,"Pole sud",3.5f);
+
+        System.out.println(dolphin);
+
+        aquatic.swim();
+        dolphin.swim();
+        penguin.swim();
 
 
 

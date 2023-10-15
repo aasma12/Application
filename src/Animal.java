@@ -1,4 +1,4 @@
-public class Animal {
+public sealed class Animal permits Aquatic,terrestrial {
     String family;
     String name;
     int age;
